@@ -25,27 +25,48 @@ export default function ChatbotSection() {
     const [messages, setMessages] = useState<Message[]>(initialMessages);
     const [input, setInput] = useState("");
 
-    const handleSend = () => {
+    const handleSend = async () => {
         if (!input.trim()) return;
 
-        const userMessage: Message = { role: "user", text: input };
+        const currentInput = input;
+
+        const userMessage: Message = {
+            role: "user",
+            text: currentInput,
+        };
+
         setMessages((prev) => [...prev, userMessage]);
         setInput("");
 
-        // Simulate bot response
-        setTimeout(() => {
-            let botText = "Đó là một câu hỏi thú vị! Hãy nhìn nhận nó dưới góc độ thực tiễn và tư duy phản biện.";
-            const lowerInput = input.toLowerCase();
+        try {
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    message: currentInput,
+                }),
+            });
 
-            for (const key in mockResponses) {
-                if (lowerInput.includes(key)) {
-                    botText = mockResponses[key];
-                    break;
-                }
-            }
+            const data = await res.json();
 
-            setMessages((prev) => [...prev, { role: "bot", text: botText }]);
-        }, 1000);
+            setMessages((prev) => [
+                ...prev,
+                {
+                    role: "bot",
+                    text: data.reply,
+                },
+            ]);
+        } catch (error) {
+            setMessages((prev) => [
+                ...prev,
+                {
+                    role: "bot",
+                    text: "Xin lỗi, AI đang lỗi.",
+                },
+            ]);
+        }
     };
 
     return (
