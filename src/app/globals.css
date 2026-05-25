@@ -28,6 +28,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-playfair {
+  font-family: var(--font-playfair-display), Georgia, serif;
+}
+
 /* Luxury Texture */
 body::before {
   content: "";

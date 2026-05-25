@@ -42,7 +42,7 @@ export default function ApplicationSection() {
                         </p>
                         <div className="mt-auto flex items-start gap-4 p-5 rounded-[24px] bg-rose-500/5 border border-rose-500/10">
                             <TrendingDown className="w-5 h-5 text-rose-500 mt-1" />
-                            <p className="text-sm italic text-rose-300/80 font-serif">"Nhiều người nói vậy thì chắc là đúng..." - Cái bẫy của tâm lý đám đông.</p>
+                            <p className="text-sm italic text-rose-300/80 font-playfair">"Nhiều người nói vậy thì chắc là đúng..." - Cái bẫy của tâm lý đám đông.</p>
                         </div>
                     </motion.div>
 
@@ -65,7 +65,7 @@ export default function ApplicationSection() {
                         </p>
                         <div className="mt-auto flex items-start gap-4 p-5 rounded-[24px] bg-amber-500/5 border border-amber-500/10">
                             <EyeOff className="w-5 h-5 text-amber-500 mt-1" />
-                            <p className="text-sm italic text-amber-300/80 font-serif">Lợi ích che mờ mắt, khiến con người tự huyễn hoặc chính mình.</p>
+                            <p className="text-sm italic text-amber-300/80 font-playfair">Lợi ích che mờ mắt, khiến con người tự huyễn hoặc chính mình.</p>
                         </div>
                     </motion.div>
 
@@ -88,7 +88,7 @@ export default function ApplicationSection() {
                         </p>
                         <div className="mt-auto flex items-start gap-4 p-6 rounded-[24px] bg-blue-500/20 border border-blue-500/30 backdrop-blur-sm">
                             <Lightbulb className="w-6 h-6 text-blue-300 mt-1 animate-pulse" />
-                            <p className="text-sm italic text-blue-50 font-medium font-serif">Chân lý là kết quả của quá trình lao động và tư duy nghiêm túc.</p>
+                            <p className="text-sm italic text-blue-50 font-medium font-playfair">Chân lý là kết quả của quá trình lao động và tư duy nghiêm túc.</p>
                         </div>
                     </motion.div>
                 </div>

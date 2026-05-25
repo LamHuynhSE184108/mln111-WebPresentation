@@ -12,6 +12,7 @@ const theories = [
         example: "Ví dụ: 'Quả xoài' chỉ tồn tại khi tôi nếm vị ngọt, thấy màu vàng và ngửi thấy mùi thơm của nó.",
         icon: <User className="w-12 h-12" />,
         color: "from-blue-600/20 to-blue-400/20",
+        image: "/backgrounds/chủ nghĩa duy tâm chủ quan.png",
     },
     {
         title: "Chủ nghĩa duy tâm khách quan",
@@ -19,6 +20,7 @@ const theories = [
         example: "Ví dụ: 'Thế giới ý niệm' của Platôn - những gì chúng ta thấy chỉ là cái bóng của chân lý hoàn hảo.",
         icon: <Globe className="w-12 h-12" />,
         color: "from-indigo-600/20 to-indigo-400/20",
+        image: "/backgrounds/chủ nghĩa duy tâm khách quang.png",
     },
     {
         title: "Thuyết không thể biết (Agnoticism)",
@@ -26,6 +28,7 @@ const theories = [
         example: "Ví dụ: 'Vật tự nó' (Thing-in-itself) của Kant - ranh giới mờ mịt giữa hiện tượng và bản chất.",
         icon: <Cloud className="w-12 h-12" />,
         color: "from-purple-600/20 to-purple-400/20",
+        image: "/backgrounds/thuyết không thể biết.png",
     },
     {
         title: "Chủ nghĩa duy vật trước Mác",
@@ -33,6 +36,7 @@ const theories = [
         example: "Ví dụ: Nhìn cái cây và ghi nhận nó như một tấm gương, thiếu sự tác động cải tạo thế giới.",
         icon: <Camera className="w-12 h-12" />,
         color: "from-emerald-600/20 to-emerald-400/20",
+        image: "/backgrounds/hủ nghĩa duy vật trước Mác.png",
     },
     {
         title: "Triết học Mác - Lênin",
@@ -40,6 +44,7 @@ const theories = [
         example: "Ví dụ: Hoạt động thực tiễn là thước đo duy nhất để khẳng định điều gì là chân lý.",
         icon: <Zap className="w-12 h-12" />,
         color: "from-red-600/20 to-red-400/20",
+        image: "/backgrounds/Triết học Mác - Lênin.png",
     },
 ];
 
@@ -71,6 +76,20 @@ export default function TheorySection() {
                                 theory.color
                             )}
                         >
+                            {/* Background Image */}
+                            {theory.image && (
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500"
+                                    style={{
+                                        backgroundImage: `url('${theory.image}')`,
+                                        mixBlendMode: "screen",
+                                    }}
+                                />
+                            )}
+
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none" />
+
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="mb-8 p-6 rounded-[32px] bg-white/5 w-fit group-hover:bg-blue-500/20 transition-all duration-500 group-hover:rotate-12">
                                     {theory.icon}
